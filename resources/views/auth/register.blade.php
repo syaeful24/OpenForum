@@ -2,6 +2,8 @@
 
     @if(session('success'))
         <p>{{session('success')}}</p>
+    @elseif(session('fail'))
+        <p>{{session('fail')}}</p>
     @endif
 
     <form action="/register/validate" method="post">
