@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Register;
-use App\Http\Controllers\Login;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Main;
 use App\Http\Controllers\Authentication;
 
@@ -17,9 +16,7 @@ use App\Http\Controllers\Authentication;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Main::class,'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/Auth/{page}', [Authentication::class, 'index']);
@@ -30,4 +27,5 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [Main::class, 'dashboard'])->name('dashboard');
     Route::get('/logout', [Authentication::class, 'logout'])->name('logout');
+    Route::post('/post/create', [PostController::class, 'create']);
 });
