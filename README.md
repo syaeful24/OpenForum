@@ -10,3 +10,15 @@ Cek <a href="https://github.com/syaeful24/OpenForum/blob/master/CONTRIBUTE.md">h
 ```
 composer install
 ```
+
+### Install Tailwind
+1. Buka terminal
+2. Paste teks dibawah
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+3. Setelah selesai dan ingin mengubah tampilan di dev
+```
+npm run dev
+```
