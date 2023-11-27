@@ -16,9 +16,7 @@ use App\Http\Controllers\Authentication;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Main::class,'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/Auth/{page}', [Authentication::class, 'index']);
