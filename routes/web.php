@@ -29,5 +29,5 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [Main::class, 'dashboard'])->name('dashboard');
     Route::get('/logout', [Authentication::class, 'logout'])->name('logout');
-    Route::get('/post/{method}', [PostController::class, 'method']);
+    Route::get('/post/create', [PostController::class, 'create']);
 });
