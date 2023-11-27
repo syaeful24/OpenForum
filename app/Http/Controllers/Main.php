@@ -16,7 +16,7 @@ class Main extends Controller
 
     public function index(){
         $posts = Post::with('user')->get();
-        return view('welcome', ['posts' => $posts]);
+        return view('home', ['posts' => $posts]);
     }
 
 }
